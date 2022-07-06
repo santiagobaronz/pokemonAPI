@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon API</title>
+
+    <!-- CSS Styles -->
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-div">
+            <img src="https://richaudcommx.files.wordpress.com/2021/01/pokemon.png" alt="" srcset="">
+            <h1 class="marginBottom">¡Busca a tu Pokémon!</h1>
+            <p class="marginBottom">A continuación escribe el nombre o la id del pokémon que deseas buscar,
+                luego oprime el botón de búsqueda.
+            </p>
+            <input type="text" id="findInput" placeholder="Ingresa el nombre o id del Pokémon ..." required>
+            <button type="submit" id="findButton">Buscar</button>
+            <p id="alert-banner"></p>
+
+            <div class="info">
+                <img src="https://cdn-icons-png.flaticon.com/512/3248/3248093.png" alt="">
+                <p>Proyecto elaborado por Santiago Baron Zuleta (20212020052) para el curso de JavaScript (Giweb JS)</p>
+            </div>
+
+        </div>
+        <div class="results-div">
+            <h3 id="pokemonTitle">Un pokémon podrá aparecen en cualquier momento</h3>
+            <img id="pokemonImg" src="https://cdn.streamloots.com/uploads/5eb3db772a3fcd0035f7ff40/10172dc2-f05e-4804-948f-94ec8a1747ce.gif" alt="Imagen del pikacku">
+            <p id="pokemonSkills">¿Qué habilidades esconderá este Pokémon?</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
