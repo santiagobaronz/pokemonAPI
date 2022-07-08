@@ -25,7 +25,11 @@ const showPokemon = (userInfo) => {
                 name = convertString(name);
                 pokemonTitle.innerHTML = `El pokémon es ${name} (${id})`;
 
-                pokemonImg.src = sprites.front_default;
+                if(sprites.front_default != null){
+                    pokemonImg.src = sprites.front_default;
+                }else{
+                    pokemonImg.src = "https://i.pinimg.com/originals/81/82/d8/8182d8cbea7f45d66d6511153e21ca32.png"
+                }
 
                 let pList = document.createElement("p");
                 pList.id = "pList"
