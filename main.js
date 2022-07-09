@@ -8,7 +8,8 @@ const alertBanner = document.querySelector('#alert-banner');
 const resultDiv = document.querySelector('.results-div')
 const pokemonTitle = document.querySelector('#pokemonTitle');
 const pokemonImg = document.querySelector('#pokemonImg');
-const pokemonSkills = document.querySelector('#pokemonSkills');
+const pokemonSkillsTitle = document.querySelector('#pokemonSkillsTitle');
+const pokemonSkillsList = document.querySelector('#pokemonSkillsList');
 
 const convertString = (text) => {
     text = text[0].toUpperCase() + text.substring(1);
@@ -31,16 +32,18 @@ const showPokemon = (userInfo) => {
                     pokemonImg.src = "https://i.pinimg.com/originals/81/82/d8/8182d8cbea7f45d66d6511153e21ca32.png"
                 }
 
-                let pList = document.createElement("p");
-                pList.id = "pList"
-                resultDiv.appendChild(pList);
-                pList.innerHTML = "Lista de habilidades:"
+                pokemonSkillsTitle.innerHTML = "Lista de habilidades:";
 
-                pokemonSkills.remove();
+                let skillList = document.querySelector("#pokemonAbilities");
+
+                if(skillList != null){
+                    skillList.remove();
+                }
+
+                
                 let newList = document.createElement("ul");
                 newList.id = 'pokemonAbilities';
                 resultDiv.appendChild(newList);
-                
 
                 abilities.forEach(element => {
                     let newItem = document.createElement('li');
@@ -49,7 +52,21 @@ const showPokemon = (userInfo) => {
                     let ability = convertString(element.ability.name);
                     newItem.innerHTML = ability;
                 });
+                
+                
+            })
+            .catch( (e) =>{
+                pokemonTitle.innerHTML = "Parece que este pokémon no existe";
+                pokemonImg.src = "assets/question-mark.png";
+                pokemonSkillsTitle.innerHTML = "¡Prueba con otro nombre o id!";
 
+                if(document.querySelector("#pokemonAbilities") != null){
+                    document.querySelector("#pokemonAbilities").remove();
+                    pokemonSkillsList.remove();
+                }
+
+                console.log(e)
+                
             })
 
 }
@@ -68,12 +85,7 @@ findButton.addEventListener("click", () => {
         inputValue = inputValue.toLowerCase();
         inputValue = inputValue.trim();
 
-        let listElement = document.querySelector('#pokemonAbilities');
-        if(listElement != null){
-            document.querySelector('#pList').remove();
-            listElement.remove();
-        }
-
+        pokemonSkillsList.remove();
         showPokemon(inputValue);
 
     }

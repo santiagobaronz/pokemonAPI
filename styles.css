@@ -11,7 +11,8 @@
 .container{
     background-color: black;
     height: 100vh;
-    width: 100vw;display: flex;
+    width: 100vw;
+    display: flex;
 }
 
 .search-div{
@@ -145,3 +146,65 @@ li:hover{
     background-color: #e83c4a;
     transition: 0.2s all;
 }
+
+
+@media only screen and (max-width: 1440px) {
+
+    .container{
+        height: 100%;
+    }
+
+    .search-div, .results-div{
+        width: 50%;
+        height: auto;
+        padding: 40px;
+    }
+    
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    .container{
+        width: 100vw;
+        display: block;
+    }
+
+    .search-div, .results-div{
+        width: 100%;
+        height: auto;
+        padding: 40px;
+    }
+
+    #findInput{
+        width: 100%;
+    }
+
+    #findButton{
+        width: 150px;
+    }
+
+    #findButton:hover{
+        background-color: #f79013;
+        transition: 0.2s all;
+        width: 165px;
+    }
+
+    .info img{
+        float: none;
+    }
+
+    .info p{
+        margin-left: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .results-div h3{
+        font-size: 30px;
+    }
+
+    .results-div img{
+        width: 300px;
+    }
+    
+  }
